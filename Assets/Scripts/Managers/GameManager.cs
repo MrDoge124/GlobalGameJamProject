@@ -14,11 +14,12 @@ public class GameManager : MonoBehaviour
     public int userTheme;
     public int userFry;
     public int userSize;
+    float totalScore = 0;
     // Start is called before the first frame update
     void Start()
     {
         nextButton.SetActive(true);
-        //userMeme = new Meme().CreateMeme(userText,userCol,userTheme,userFry,userSize);
+        userMeme = new Meme().CreateMeme(userText,userCol,userTheme,userFry,userSize);
     }
     public void NextCustomer()
     {
@@ -30,9 +31,47 @@ public class GameManager : MonoBehaviour
         print("Customer Image Size = " + customerMeme.imageSize);
         nextButton.SetActive(false);
     }
-    // Update is called once per frame
-    void Update()
+    public float CompareMeme(Meme m1, Meme m2)
     {
-        
+        float score = 0;
+        if (m1.topText == m2.topText)
+        {
+            score++;
+        }
+        else
+        {
+            score--;
+        }
+        if (m1.borderCol == m2.borderCol)
+        {
+            score++;
+        }
+        else
+        {
+            score--;
+        }
+        if (m1.imageTheme == m2.imageTheme)
+        {
+            score++;
+        }
+        else
+        {
+            score--;
+        }
+        if (m1.imageSize == m2.imageSize)
+        {
+            score++;
+        }
+        else
+        {
+            score--;
+        }
+        return score;
     }
+    public void Results()
+    {
+        totalScore = CompareMeme(customerMeme,userMeme);
+        print("total score = " +totalScore);
+    }
+
 }
