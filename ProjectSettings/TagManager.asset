@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TopText
+  - BottomText
+  - ColourTrigger
+  - WhitePaint
+  - BlackPaint
+  - BlankMeme
   layers:
   - Default
   - TransparentFX
