@@ -8,12 +8,14 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject orderMenu;
     [SerializeField] GameObject imageMenu;
     [SerializeField] GameObject cookMenu;
+    [SerializeField] GameObject blank;
     // Start is called before the first frame update
     void Start()
     {
         orderMenu.SetActive(true);
         imageMenu.SetActive(false);
         cookMenu.SetActive(false);
+        blank.SetActive(false);
     }
     public void ShowMenu(GameObject obj)
     {
