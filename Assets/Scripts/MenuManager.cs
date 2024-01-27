@@ -23,10 +23,36 @@ public class MenuManager : MonoBehaviour
     {
         obj.SetActive(false);
     }
+    #region meme settings
     public void SetText(bool state)
     {
         gameMan.userText = state;
         print("User text = " + gameMan.userText);
+    }
+    public void Setcol(Color col)
+    {
+        gameMan.userCol = col;
+        print("User colour = " + gameMan.userCol);
+    }
+    public void SetTheme(int themeID)
+    {
+        gameMan.userTheme = themeID;
+        print("User theme = " + gameMan.userTheme);
+    }
+    public void SetFry(int fry)
+    {
+        gameMan.userFry = fry;
+        print("User fry = " + gameMan.userFry);
+    }
+    public void SetSize(int ImgSize)
+    {
+        gameMan.userSize = ImgSize;
+        print("User size = " + gameMan.userSize);
+    }
+    #endregion
+    public void CreateObjectImageMenu(GameObject obj)
+    {
+        Instantiate(obj,imageMenu.transform);
     }
     // Update is called once per frame
     void Update()
