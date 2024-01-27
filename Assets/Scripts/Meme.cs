@@ -54,17 +54,4 @@ public class Meme
 
         return newMeme;
     }
-    public void CompareMeme(Meme m1, Meme m2)
-    {
-        float score = 0;
-        if (m1.topText == m2.topText)
-        {
-            score++;
-        }
-        else
-        {
-            score--;
-        }
-    }
-
 }

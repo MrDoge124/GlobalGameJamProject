@@ -54,9 +54,4 @@ public class MenuManager : MonoBehaviour
     {
         Instantiate(obj,imageMenu.transform);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
