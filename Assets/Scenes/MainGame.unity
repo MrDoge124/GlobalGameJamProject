@@ -3370,21 +3370,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   peopleSprite:
-  - {fileID: 21300000, guid: 8ddd78c9d023cf646bb560f507b0c12d, type: 3}
-  - {fileID: 21300000, guid: b7229e756b17dc6498fd63ec823cb7fe, type: 3}
-  - {fileID: 21300000, guid: 4423693ed3725234786f0cea0815dd58, type: 3}
+  - {fileID: 21300000, guid: 17ec51838cb09174a91c5fc745ac81fe, type: 3}
+  - {fileID: 21300000, guid: 35bcd7a84ab9ca4488526b45d878662e, type: 3}
+  - {fileID: 21300000, guid: cf7ba0f74f551dc4a8638e10fc46d4b8, type: 3}
+  - {fileID: 21300000, guid: 8071ad26e92290d4b8bda02d2b016413, type: 3}
+  - {fileID: 21300000, guid: 148c3545714e88c47be1c3f22da320fc, type: 3}
+  - {fileID: 21300000, guid: 0d102c56c5787e3408c25659cbbe25e7, type: 3}
+  - {fileID: 21300000, guid: e81dc5f4bddd26a41ab79334cf8f6412, type: 3}
+  - {fileID: 21300000, guid: 1f8182fc27d1f934bb0105a32b72cce8, type: 3}
+  - {fileID: 21300000, guid: 7e09b37768ab5d545a82d78bd67dc456, type: 3}
   foodSprite:
-  - {fileID: 21300000, guid: 4f17bd71b5d3f524795194999b3f1b76, type: 3}
+  - {fileID: 21300000, guid: 26c7b114207f35d4cb545780e501c833, type: 3}
   - {fileID: 21300000, guid: 48933ad7a22a11247a8f335f0df8b037, type: 3}
-  - {fileID: 21300000, guid: 4f17bd71b5d3f524795194999b3f1b76, type: 3}
+  - {fileID: 21300000, guid: a4040bcf764981d42a05569d25e6443a, type: 3}
+  - {fileID: 21300000, guid: 421d99cd152225448846ba88b5055d42, type: 3}
+  - {fileID: 21300000, guid: 072aa48fa96379345a333df4c1897b9a, type: 3}
   animalSprite:
-  - {fileID: 21300000, guid: 1c784102bd130964fbfbbbbe94f137ea, type: 3}
-  - {fileID: 21300000, guid: ebecff5b96310f24c9f7f0a235b81181, type: 3}
-  - {fileID: 21300000, guid: 1a5c5b753192daf449c9e352590411b3, type: 3}
+  - {fileID: 21300000, guid: 4dcd5e10d343e424ca3ac853ce99204f, type: 3}
+  - {fileID: 21300000, guid: e5c074a60810b3d41ba07033394a8d0a, type: 3}
+  - {fileID: 21300000, guid: aaafbfb02b8ae1546a451c332d2d339e, type: 3}
+  - {fileID: 21300000, guid: 4fdb7e3e0778c3a44887d2814e0f6b21, type: 3}
+  - {fileID: 21300000, guid: fe77b979536f53e4bbbad1eb2dac029c, type: 3}
+  - {fileID: 21300000, guid: 1d11cdcc1cbf91d459e104bc28ad01a0, type: 3}
+  - {fileID: 21300000, guid: 99c76a85ee6d0dc41bd7eee24dbe6bcb, type: 3}
+  - {fileID: 21300000, guid: 8ffb85e0948bbfa4b8d3a1f02f970d97, type: 3}
+  - {fileID: 21300000, guid: ca7f0ec5ec7358c49950fdb58a795f22, type: 3}
+  - {fileID: 21300000, guid: 95fc341f922b58745a1484a6c4226dde, type: 3}
   miscSprite:
+  - {fileID: 21300000, guid: 06460b58df083d5419143be08124e78e, type: 3}
+  - {fileID: 21300000, guid: 60d75afc0148bb34e9c02b0e91da8ae3, type: 3}
+  - {fileID: 21300000, guid: f56e5866fbd8b2f4eb0f910ea5647e5c, type: 3}
   - {fileID: 21300000, guid: 7d308e55206496446a98ea7afc4ba78c, type: 3}
-  - {fileID: 21300000, guid: 41ff916da078c7043a8f916f118d71b7, type: 3}
-  - {fileID: 21300000, guid: 7d308e55206496446a98ea7afc4ba78c, type: 3}
+  - {fileID: 21300000, guid: ed82458c787d588469c271cbc1673015, type: 3}
 --- !u!1 &1947626580 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8537539326437928073, guid: eb6e40b526c3df14eb07ca00fc215f5f, type: 3}
