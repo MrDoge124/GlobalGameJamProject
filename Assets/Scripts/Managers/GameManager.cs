@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        orderButton.GetComponent<Button>().interactable = false;
-        imageButton.GetComponent<Button>().interactable = false;
-        cookButton.GetComponent<Button>().interactable = false;
+        //orderButton.GetComponent<Button>().interactable = false;
+        //imageButton.GetComponent<Button>().interactable = false;
+        //cookButton.GetComponent<Button>().interactable = false;
         nextButton.SetActive(true);
         customerObj.SetActive(false);
         userMeme = new Meme().CreateMeme(userText,userCol,userTheme,userFry,userSize);
