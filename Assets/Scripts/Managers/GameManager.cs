@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int userSize;
     float totalScore = 0;
     [SerializeField] AudioSource BellRing; 
+    [SerializeField] TextMeshProUGUI customerText;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,75 @@ public class GameManager : MonoBehaviour
         print("Customer Fry Stage = " + customerMeme.fryStage);
         print("Customer Image Size = " + customerMeme.imageSize);
         nextButton.SetActive(false);
+        customerText.text = CustomerSpeech();
+    }
+    string CustomerSpeech()
+    {
+        string result = "";
+        string textState = "";
+        string bordercolText = "";
+        string themeText = "";
+        string fryText = "";
+        string sizeText = "";
+        if (customerMeme.topText)
+        {
+            textState = "Top Text";
+        }
+        else
+        {
+            textState = "Bottom Text";
+        }
+        if (customerMeme.borderCol == Color.white)
+        {
+            bordercolText = "White";
+        }
+        if (customerMeme.borderCol == Color.black)
+        {
+            bordercolText = "Black";
+        }
+        if (customerMeme.imageTheme == 0)
+        {
+            themeText = "People";
+        }
+        if (customerMeme.imageTheme == 1)
+        {
+            themeText = "Animal";
+        }
+        if (customerMeme.imageTheme == 2)
+        {
+            themeText = "Food";
+        }
+        if (customerMeme.imageTheme == 3)
+        {
+            themeText = "Misc";
+        }
+        if (customerMeme.fryStage == 0)
+        {
+            fryText = "No frying";
+        }
+        if (customerMeme.fryStage == 1)
+        {
+            fryText = "Cooked";
+        }
+        if (customerMeme.fryStage == 2)
+        {
+            fryText = "Crispy";
+        }
+        if (customerMeme.imageSize == 0)
+        {
+            sizeText = "Square";
+        }
+        if (customerMeme.imageSize == 1)
+        {
+            sizeText = "Tall";
+        }
+        if (customerMeme.imageSize == 2)
+        {
+            sizeText = "Wide";
+        }
+        return result = (textState + " " + bordercolText + " " + themeText + " " + fryText + " " + sizeText);
+        //This pretty much reads the results and sets the strings. It then joins them together in the result string.
+        //That's what is displayed.
     }
     public float CompareMeme(Meme m1, Meme m2)
     {
@@ -72,7 +143,7 @@ public class GameManager : MonoBehaviour
     }
     public void Results()
     {
-        totalScore = CompareMeme(customerMeme,userMeme);
+        totalScore += CompareMeme(customerMeme,userMeme);
         print("total score = " +totalScore);
     }
 

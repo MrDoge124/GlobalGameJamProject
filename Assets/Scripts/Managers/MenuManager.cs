@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Managers")]
     [SerializeField] GameManager gameMan;
+    [SerializeField] MemeImage images;//Meme image lists
+    [Header("Menu Objects")]
     [SerializeField] GameObject orderMenu;
     [SerializeField] GameObject imageMenu, imageMenu2;
     [SerializeField] GameObject cookMenu;
     [SerializeField] GameObject blank;
+    [Header("Image Objects")]
+    [SerializeField] GameObject PeopleImage;
+    [SerializeField] GameObject AnimalImage;
+    [SerializeField] GameObject FoodImage;
+    [SerializeField] GameObject MiscImage; //Image prefabs
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +65,32 @@ public class MenuManager : MonoBehaviour
     public void CreateObjectImageMenu(GameObject obj)
     {
         Instantiate(obj,imageMenu.transform);
+    }
+    public void CreateMemeImage(int themeID)
+    {
+        if (themeID == 0)
+        {
+            GameObject newobj = Instantiate(PeopleImage, cookMenu.transform);
+            newobj.GetComponent<Image>().sprite = images.peopleSprite[Random.Range(0, images.peopleSprite.Length)];
+            blank.GetComponent<BlankMemeScript>().memeImage = newobj.GetComponent<Image>().sprite;
+        }
+        if (themeID == 1)
+        {
+            GameObject newobj = Instantiate(AnimalImage, cookMenu.transform);
+            newobj.GetComponent<Image>().sprite = images.animalSprite[Random.Range(0, images.animalSprite.Length)];
+            blank.GetComponent<BlankMemeScript>().memeImage = newobj.GetComponent<Image>().sprite;
+        }
+        if (themeID == 2)
+        {
+            GameObject newobj = Instantiate(FoodImage, cookMenu.transform);
+            newobj.GetComponent<Image>().sprite = images.foodSprite[Random.Range(0, images.foodSprite.Length)];
+            blank.GetComponent<BlankMemeScript>().memeImage = newobj.GetComponent<Image>().sprite;
+        }
+        if (themeID == 3)
+        {
+            GameObject newobj = Instantiate(MiscImage, cookMenu.transform);
+            newobj.GetComponent<Image>().sprite = images.miscSprite[Random.Range(0, images.miscSprite.Length)];
+                        blank.GetComponent<BlankMemeScript>().memeImage = newobj.GetComponent<Image>().sprite;
+        }
     }
 }

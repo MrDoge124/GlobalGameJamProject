@@ -8,6 +8,7 @@ public class DraggableComponent : MonoBehaviour
     [SerializeField]bool isText;
     [SerializeField]bool isPaint;
     [SerializeField]bool isPin;
+    [SerializeField]bool isMemeImage;
     BlankMemeScript BMeme;
 
     private void Start()
@@ -38,7 +39,7 @@ public class DraggableComponent : MonoBehaviour
                     Destroy(this.gameObject, 0.1f);
                 }
             }
-            if (isPaint) 
+            if (isPaint)
             {
                 if (collision.CompareTag("ColourTrigger"))
                 {
@@ -54,19 +55,52 @@ public class DraggableComponent : MonoBehaviour
                     }
                 }
             }
+            if (collision.CompareTag("ColourTrigger"))
+            {
+                if (isMemeImage)
+                {
+                    if (this.CompareTag("PeopleImage"))
+                    {
+                        BMeme.ChangeTheme(0);
+                        Destroy(this.gameObject, 0.1f);
+                    }
+                    if (this.CompareTag("AnimalImage"))
+                    {
+                        BMeme.ChangeTheme(1);
+                        Destroy(this.gameObject, 0.1f);
+                    }
+                    if (this.CompareTag("FoodImage"))
+                    {
+                        BMeme.ChangeTheme(2);
+                        Destroy(this.gameObject, 0.1f);
+                    }
+                    if (this.CompareTag("MiscImage"))
+                    {
+                        BMeme.ChangeTheme(3);
+                        Destroy(this.gameObject, 0.1f);
+                    }
+                }
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isPin)
         {
+            if (collision.CompareTag("SideTrigger"))
+            {
+                BMeme.rollCountWide++;
+                print(BMeme.rollCountWide);
+            }
             if (collision.CompareTag("BottomText"))
             {
                BMeme.rollCountTall++;
+                print(BMeme.rollCountTall);
             }
             if (collision.CompareTag("TopText"))
             {
                 BMeme.rollCountTall++;
+                print(BMeme.rollCountTall);
             }
         }
     }
