@@ -18,16 +18,20 @@ public class GameManager : MonoBehaviour
     float totalScore = 0;
     [SerializeField] AudioSource BellRing; 
     [SerializeField] TextMeshProUGUI customerText;
+    [SerializeField] GameObject customerObj;
+    [SerializeField] GameObject Blank;
     // Start is called before the first frame update
     void Start()
     {
         nextButton.SetActive(true);
+        customerObj.SetActive(false);
         userMeme = new Meme().CreateMeme(userText,userCol,userTheme,userFry,userSize);
     }
     public void NextCustomer()
     {
         BellRing.Play(0);
         customerMeme = new Meme().CreateRandomMeme();
+        customerObj.SetActive(true);
         print("Customer Text = " + customerMeme.topText);
         print("Customer border colour = " + customerMeme.borderCol);
         print("Customer Image Theme = " + customerMeme.imageTheme);
@@ -35,6 +39,11 @@ public class GameManager : MonoBehaviour
         print("Customer Image Size = " + customerMeme.imageSize);
         nextButton.SetActive(false);
         customerText.text = CustomerSpeech();
+    }
+    public void ResetGame()
+    {
+        Start();
+        Blank.GetComponent<BlankMemeScript>().ResetMeme();
     }
     string CustomerSpeech()
     {
@@ -100,7 +109,7 @@ public class GameManager : MonoBehaviour
         {
             sizeText = "Wide";
         }
-        return result = (textState + " " + bordercolText + " " + themeText + " " + fryText + " " + sizeText);
+        return result = (textState + ", " + bordercolText + ", " + themeText + ", " + fryText + ", " + sizeText);
         //This pretty much reads the results and sets the strings. It then joins them together in the result string.
         //That's what is displayed.
     }
