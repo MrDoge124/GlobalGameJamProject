@@ -15,7 +15,10 @@ public class ClickandDrag : MonoBehaviour
     private void OnMouseDown()
     {
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z +1));
-        rb.gravityScale = 0;
+        if (rb != null)
+        {
+            rb.gravityScale = 0;
+        }
         //print("a");
     }
 
@@ -27,8 +30,11 @@ public class ClickandDrag : MonoBehaviour
 
     private void OnMouseUp()
     {
-        rb.gravityScale = 1;
-        rb.velocity = new Vector2 (0,0);
+        if (rb != null)
+        {
+            rb.gravityScale = 1;
+            rb.velocity = new Vector2(0, 0);
+        }
         //print("c");
     }
 }

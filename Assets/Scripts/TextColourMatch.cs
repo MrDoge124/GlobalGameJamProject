@@ -6,17 +6,12 @@ using UnityEngine.UI;
 
 public class TextColourMatch : MonoBehaviour
 {
-    GameObject memeRoot;
-    // Start is called before the first frame update
-    void Start()
-    {
-        memeRoot = transform.parent.gameObject;
-    }
+    [SerializeField]GameObject memeRootSquare, memeRootTall, memeRootWide;
 
     // Update is called once per frame
     void Update()
     {
-        if (memeRoot.GetComponent<Image>().color == Color.black)
+        if (memeRootSquare.GetComponent<Image>().color == Color.black || memeRootTall.GetComponent<Image>().color == Color.black || memeRootWide.GetComponent<Image>().color == Color.black)
         {
             GetComponent<Image>().color = Color.black;
             foreach (TextMeshProUGUI text in GetComponentsInChildren<TextMeshProUGUI>())
@@ -25,7 +20,7 @@ public class TextColourMatch : MonoBehaviour
             }
            
         }
-        if (memeRoot.GetComponent<Image>().color == Color.white)
+        if (memeRootSquare.GetComponent<Image>().color == Color.white || memeRootTall.GetComponent<Image>().color == Color.white || memeRootWide.GetComponent<Image>().color == Color.white)
         {
             GetComponent<Image>().color = Color.white;
             foreach (TextMeshProUGUI text in GetComponentsInChildren<TextMeshProUGUI>())

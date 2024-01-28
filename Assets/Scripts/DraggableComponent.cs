@@ -7,7 +7,9 @@ public class DraggableComponent : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField]bool isText;
     [SerializeField]bool isPaint;
+    [SerializeField]bool isPin;
     BlankMemeScript BMeme;
+
     private void Start()
     {
         BMeme = GameObject.FindGameObjectWithTag("BlankMeme").GetComponent<BlankMemeScript>();
@@ -15,7 +17,7 @@ public class DraggableComponent : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButton(0))
         {
             if (isText)
             {
@@ -27,7 +29,7 @@ public class DraggableComponent : MonoBehaviour
                     BMeme.TextCheck();
                     Destroy(this.gameObject, 0.1f);
                 }
-                else if (collision.CompareTag("BottomText"))
+                if (collision.CompareTag("BottomText"))
                 {
                     print("Bottom!");
                     BMeme.top = false;
@@ -51,6 +53,20 @@ public class DraggableComponent : MonoBehaviour
                         Destroy(this.gameObject, 0.1f);
                     }
                 }
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isPin)
+        {
+            if (collision.CompareTag("BottomText"))
+            {
+               BMeme.rollCountTall++;
+            }
+            if (collision.CompareTag("TopText"))
+            {
+                BMeme.rollCountTall++;
             }
         }
     }

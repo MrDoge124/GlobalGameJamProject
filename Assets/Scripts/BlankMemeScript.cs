@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class BlankMemeScript : MonoBehaviour
 {
-    [SerializeField]GameObject topText, bottomText, image;
+    [SerializeField]GameObject topText, bottomText, image, baseSquare, baseTall, baseWide;
     Color bordercolour;
     public bool top, bottom;
+    public int rollCountTall = 0;
+    public int rollCountWide = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +17,17 @@ public class BlankMemeScript : MonoBehaviour
         bottomText.SetActive(false);
         image.SetActive(false);
         bordercolour = Color.white;
+        baseSquare.SetActive(true);
+        baseTall.SetActive(false);
+        baseWide.SetActive(false);
     }
-
+    private void Update()
+    {
+        if (rollCountTall >= 5)
+        {
+            baseSquare.SetActive(false);
+        }
+    }
     public void TextCheck()
     {
         if (top)
@@ -32,6 +43,8 @@ public class BlankMemeScript : MonoBehaviour
     }
     public void ColourChange(Color c)
     {
-        this.GetComponent<Image>().color = c;
+        baseSquare.GetComponent<Image>().color = c;
+        baseTall.GetComponent<Image>().color = c;
+        baseWide.GetComponent<Image>().color = c;
     }
 }
