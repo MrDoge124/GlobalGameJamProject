@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
     Meme userMeme;
     int currentMenu = 0; //0 ordering //1 image //2 cook
     [SerializeField] GameObject nextButton;
+    [SerializeField] GameObject orderButton;
+    [SerializeField] GameObject imageButton;
+    [SerializeField] GameObject cookButton;
     public bool userText;
     public Color userCol;
     public int userTheme;
@@ -23,15 +27,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        orderButton.GetComponent<Button>().interactable = false;
+        imageButton.GetComponent<Button>().interactable = false;
+        cookButton.GetComponent<Button>().interactable = false;
         nextButton.SetActive(true);
         customerObj.SetActive(false);
         userMeme = new Meme().CreateMeme(userText,userCol,userTheme,userFry,userSize);
     }
-    public void NextCustomer()
+    public void NextCustomer()//Summon customer
     {
         BellRing.Play(0);
         customerMeme = new Meme().CreateRandomMeme();
         customerObj.SetActive(true);
+        orderButton.GetComponent<Button>().interactable = true;
+        imageButton.GetComponent<Button>().interactable = true;
+        cookButton.GetComponent<Button>().interactable = true;
         print("Customer Text = " + customerMeme.topText);
         print("Customer border colour = " + customerMeme.borderCol);
         print("Customer Image Theme = " + customerMeme.imageTheme);
@@ -40,12 +50,12 @@ public class GameManager : MonoBehaviour
         nextButton.SetActive(false);
         customerText.text = CustomerSpeech();
     }
-    public void ResetGame()
+    public void ResetGame()//reset the game
     {
         Start();
         Blank.GetComponent<BlankMemeScript>().ResetMeme();
     }
-    string CustomerSpeech()
+    string CustomerSpeech()//Set up the strings to say what they want
     {
         string result = "";
         string textState = "";
@@ -109,7 +119,7 @@ public class GameManager : MonoBehaviour
         {
             sizeText = "Wide";
         }
-        return result = (textState + ", " + bordercolText + ", " + themeText + ", " + fryText + ", " + sizeText);
+        return result = (bordercolText + ", " + textState + ", " + themeText + ", " + fryText + ", " + sizeText);
         //This pretty much reads the results and sets the strings. It then joins them together in the result string.
         //That's what is displayed.
     }
