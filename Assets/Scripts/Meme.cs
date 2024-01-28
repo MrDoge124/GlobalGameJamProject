@@ -25,8 +25,8 @@ public class Meme
     {
         Meme newMeme = new Meme();
 
-        int boolnum = Random.Range(0, 1);
-        if (boolnum == 1)
+        int boolnum = Random.Range(1, 10);
+        if (boolnum <= 5)
         {
             newMeme.topText = true;
         }
@@ -34,12 +34,12 @@ public class Meme
         {
             newMeme.topText = false;
         }
-        int randCol = Random.Range(0, 1);
-        if (randCol == 0)
+        int randCol = Random.Range(1, 10);
+        if (randCol <= 4)
         {
             newMeme.borderCol = Color.black;
         }
-        else if (randCol == 1)
+        else if (randCol >= 5)
         {
             newMeme.borderCol = Color.white;
         }

@@ -10,6 +10,11 @@ TagManager:
   - WhitePaint
   - BlackPaint
   - BlankMeme
+  - SideTrigger
+  - PeopleImage
+  - AnimalImage
+  - FoodImage
+  - MiscImage
   layers:
   - Default
   - TransparentFX
