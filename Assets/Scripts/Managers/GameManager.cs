@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int userFry;
     public int userSize;
     float totalScore = 0;
+    [SerializeField] AudioSource BellRing; 
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     }
     public void NextCustomer()
     {
+        BellRing.Play(0);
         customerMeme = new Meme().CreateRandomMeme();
         print("Customer Text = " + customerMeme.topText);
         print("Customer border colour = " + customerMeme.borderCol);
