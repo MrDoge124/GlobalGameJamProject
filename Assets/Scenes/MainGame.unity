@@ -3379,9 +3379,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e81dc5f4bddd26a41ab79334cf8f6412, type: 3}
   - {fileID: 21300000, guid: 1f8182fc27d1f934bb0105a32b72cce8, type: 3}
   - {fileID: 21300000, guid: 7e09b37768ab5d545a82d78bd67dc456, type: 3}
+  - {fileID: 21300000, guid: 6fba490eadc0f1443b1c52170b08d15d, type: 3}
   foodSprite:
   - {fileID: 21300000, guid: 26c7b114207f35d4cb545780e501c833, type: 3}
-  - {fileID: 21300000, guid: 48933ad7a22a11247a8f335f0df8b037, type: 3}
   - {fileID: 21300000, guid: a4040bcf764981d42a05569d25e6443a, type: 3}
   - {fileID: 21300000, guid: 421d99cd152225448846ba88b5055d42, type: 3}
   - {fileID: 21300000, guid: 072aa48fa96379345a333df4c1897b9a, type: 3}
@@ -3400,7 +3400,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 06460b58df083d5419143be08124e78e, type: 3}
   - {fileID: 21300000, guid: 60d75afc0148bb34e9c02b0e91da8ae3, type: 3}
   - {fileID: 21300000, guid: f56e5866fbd8b2f4eb0f910ea5647e5c, type: 3}
-  - {fileID: 21300000, guid: 7d308e55206496446a98ea7afc4ba78c, type: 3}
+  - {fileID: 21300000, guid: 60d75afc0148bb34e9c02b0e91da8ae3, type: 3}
   - {fileID: 21300000, guid: ed82458c787d588469c271cbc1673015, type: 3}
 --- !u!1 &1947626580 stripped
 GameObject:
