@@ -15,10 +15,13 @@ public class BlankMemeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetMeme();
+    }
+    public void ResetMeme()
+    {
         topText.SetActive(false);
         bottomText.SetActive(false);
         image.SetActive(false);
-        bordercolour = Color.white;
         baseSquare.SetActive(true);
         baseTall.SetActive(false);
         baseWide.SetActive(false);
